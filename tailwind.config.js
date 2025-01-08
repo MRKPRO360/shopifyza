@@ -9,6 +9,7 @@ export default {
         secondary: '#f5f5f5',
         secondaryPink: '#fefaf1',
         tertiary: '#db4444',
+        lightYellow: '#FFAD33',
         bgLight: '#ffffff',
         bgDark: '#000000',
         texLight: '#fafafa',

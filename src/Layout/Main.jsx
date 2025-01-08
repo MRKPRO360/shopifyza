@@ -5,11 +5,11 @@ import SmallNav from '../Utils/SmallNav/SmallNav';
 
 export default function Main() {
   return (
-    <div className='max-w-[1526] mx-auto'>
+    <div className='max-w-[1545px] mx-auto'>
       <SmallNav />
-      <div className='max-w-[1280px] mx-auto'>
+      <div className='max-w-[1170px] mx-auto px-2 2xl:px-0'>
         <Navbar />
-        <div className='my-4 lg:my-16'>
+        <div>
           <Outlet />
         </div>
         <Footer />

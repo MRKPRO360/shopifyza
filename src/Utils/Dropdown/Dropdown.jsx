@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +8,7 @@ const Dropdown = () => {
   const flipLang = (x) => (x === 'English' ? 'Bangla' : 'English');
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevOpen) => !prevOpen);
   };
 
   const handleLang = () => {
@@ -20,6 +20,9 @@ const Dropdown = () => {
   };
   console.log({ lang, selectedLang });
 
+  useEffect(() => {
+    console.log(selectedLang + ' i am running');
+  }, [selectedLang]);
   return (
     <div className='absolute right-0'>
       <button
@@ -45,7 +48,7 @@ const Dropdown = () => {
       {isOpen && (
         <div className='absolute z-10 w-[max-content] right-0  bg-white rounded-sm shadow-lg '>
           <a
-            onClick={handleLang}
+            onClick={() => handleLang()}
             onBlur={toggleDropdown}
             href='#'
             className='block px-6 py-2 text-sm text-gray-700 hover:bg-gray-100'
